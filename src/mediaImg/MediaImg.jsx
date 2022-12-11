@@ -34,8 +34,8 @@ MediaImg.propTypes = {
     heigth: PropTypes.string,
     borderRadius: PropTypes.string,
     margin: PropTypes.string,
-    src: PropTypes.string,
-    alt: PropTypes.string,
+    src: PropTypes.string.isRequired,
+    alt: PropTypes.string.isRequired,
     className: PropTypes.string,
 }
 export default MediaImg

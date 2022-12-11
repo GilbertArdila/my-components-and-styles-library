@@ -7,7 +7,6 @@ const buttonStyles = (bgColor,color,width,height,bgColorHover,colorHover,borderR
  color: ${color || 'white'};
  width: ${width || "150px"};
  height: ${height || "40px"};
- 
  border-radius: ${borderRadius || "8px"};
  text-align: center;
  &:hover{
@@ -16,7 +15,8 @@ const buttonStyles = (bgColor,color,width,height,bgColorHover,colorHover,borderR
  }
 `
 const Button = forwardRef ((props, ref) => {
-    const {bgColor,
+    const {
+        bgColor,
         color,
         width,
         height,
@@ -24,13 +24,15 @@ const Button = forwardRef ((props, ref) => {
         colorHover,
         borderRadius,
         className,
-        ...otherProps } = props;
+        type,
+        ...otherProps
+       } = props;
   return (
     <button
      ref={ref}
-     type='button'
+     type={type}
      {...otherProps}
-     className={cx(buttonStyles(bgColor,color,width,height,bgColorHover,colorHover,borderRadius),className)}
+     className={cx(buttonStyles(bgColor,color,width,height,bgColorHover,colorHover,borderRadius,type),className)}
     />
   )
 })
@@ -42,6 +44,7 @@ Button.propTypes = {
     height: PropTypes.string,
     bgColorHover: PropTypes.string,
     colorHover: PropTypes.string,
-    borderRadius: PropTypes.string
+    borderRadius: PropTypes.string,
+    type: PropTypes.string
 }
 export default Button

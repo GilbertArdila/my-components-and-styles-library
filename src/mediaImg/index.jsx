@@ -1,1 +1,1 @@
-export {default} from './MediaImg.jsx';
+export {default} from './MediaImg';

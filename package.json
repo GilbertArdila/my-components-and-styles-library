@@ -1,13 +1,18 @@
 {
-  "name": "libreriaui",
-  "version": "1.0.0",
-  "description": "libreria ui de componentes",
-  "main": "index.js",
+  "name": "libreria-ui-componentes-estilos-react",
+  "version": "0.1.1",
+  "description": "libreria ui de componentes con react",
+  "main": "./dist/index.js",
   "scripts": {
-    "test": "react-scripts test"
+    "test":"react-scripts test",
+    "release": "npm run build && npm publish",
+    "release:patch": "npm version patch && npm run release",
+    "release:minor": "npm version minor && npm run publish",
+    "release:major": "npm version major && npm run publish",
+    "build": "NODE_ENV=production && rm -rf ./dist && mkdir dist && npx babel --config-file ./babel.config.js src/ --out-dir dist --copy-files "
   },
   "keywords": [
-    "libreria-ui",
+    "libreria-ui-Gilbert",
     "componentes-react"
   ],
   "author": "Gilbert Ardila (gilbertferney@gmail.com)",
@@ -15,6 +20,9 @@
   "dependencies": {
     "@emotion/css": "^11.10.5",
     "react-scripts": "5.0.1"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.6",

@@ -87,6 +87,7 @@
             textAlign:string,
             lineHeight:string  
 
+#### to publish a new version please check pachage.json, use firs npm login and then the correponding npm command
             
 
      
